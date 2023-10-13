@@ -1,0 +1,28 @@
+module homework2_2(
+input wire[2:0] select,
+output reg light
+    );
+
+always @(*)
+begin
+    case(select)
+
+    3'b011:begin
+        light=1;
+    end
+    3'b101:begin
+        light=1;
+    end
+    3'b110:begin
+        light=1;
+    end
+    3'b111:begin
+        light=1;
+    end
+    default begin
+        light=0;
+    end
+
+    endcase
+end
+endmodule
