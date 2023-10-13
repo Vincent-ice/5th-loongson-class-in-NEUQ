@@ -3,9 +3,9 @@
 // Company: 
 // Engineer: 
 // 
-// Create Date: 2023/10/08 22:03:10
+// Create Date: 2023/10/08 22:30:11
 // Design Name: 
-// Module Name: circuit
+// Module Name: circuit1
 // Project Name: 
 // Target Devices: 
 // Tool Versions: 
@@ -20,12 +20,28 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module circuit(
+module rgb02(
     input A,
     input B,
     input C,
-    output y
+    output reg Y
     );
 
-    assign y = (A&B) | (A&C) | (B&C);
+    wire [2:0] D;
+
+    assign D ={A,B,C};
+
+    always @(*)
+    begin
+        case(D)
+            3'b110: Y<=1;
+            3'b101: Y<=1;
+            3'b011: Y<=1;
+            3'b111: Y<=1;
+            default: Y<=0;
+        
+        endcase
+    
+    end
+
 endmodule
