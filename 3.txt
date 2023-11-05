@@ -1,0 +1,11 @@
+module vote2(
+input wire A,B,C,
+output reg X,Y
+    );
+    
+    always @(*) begin
+        X=(A&B&C)&(A&B&~C)&(A&~B&C)&(~A&B&C);
+        Y=(~A&~B&~C)&(~A&~B&C)&(~A&B&~C)&(A&~B&~C);
+    end
+    
+endmodule
